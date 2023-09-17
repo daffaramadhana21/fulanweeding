@@ -40,7 +40,9 @@
         <h1>Fulan dan Fulanah</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam :</p>
         <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+        <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()"
+          >Lihat Undangan</a
+        >
       </main>
     </section>
 
@@ -342,7 +344,12 @@
             class="row row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center"
           >
             <div class="col mt-3">
-              <a href="img/gallery/1.jpg" data-toggle="lightbox" data-caption="pic1" data-gallery="my-gallery">
+              <a
+                href="img/gallery/1.jpg"
+                data-toggle="lightbox"
+                data-caption="pic1"
+                data-gallery="my-gallery"
+              >
                 <img
                   src="img/gallery/thumbnail/1.jpg"
                   alt="fulan & fulanah"
@@ -351,7 +358,12 @@
               </a>
             </div>
             <div class="col mt-3">
-              <a href="img/gallery/1.jpg" data-toggle="lightbox" data-caption="pic2" data-gallery="my-gallery">
+              <a
+                href="img/gallery/1.jpg"
+                data-toggle="lightbox"
+                data-caption="pic2"
+                data-gallery="my-gallery"
+              >
                 <img
                   src="img/gallery/thumbnail/1.jpg"
                   alt="fulan & fulanah"
@@ -360,7 +372,12 @@
               </a>
             </div>
             <div class="col mt-3">
-              <a href="img/gallery/1.jpg" data-toggle="lightbox" data-caption="pic3" data-gallery="my-gallery">
+              <a
+                href="img/gallery/1.jpg"
+                data-toggle="lightbox"
+                data-caption="pic3"
+                data-gallery="my-gallery"
+              >
                 <img
                   src="img/gallery/thumbnail/1.jpg"
                   alt="fulan & fulanah"
@@ -368,6 +385,18 @@
                 />
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form dibawah ini untuk melakukan konfirmasi kehadiran</p>
           </div>
         </div>
       </div>
@@ -409,6 +438,31 @@
       offcanvas.addEventListener("hidden.bs.offcanvas", function () {
         stickyTop.style.overflow = "hidden";
       });
+    </script>
+
+    <script>
+      const rootElement = document.querySelector(":root");
+
+      function disableScroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        window.onscroll = function () {};
+        rootElement.style.scrollBehavior = "smooth";
+        localStorage.setItem("opened", "true");
+      }
+
+      if (!localStorage.getItem("opened")) {
+        disableScroll();
+      }
     </script>
   </body>
 </html>

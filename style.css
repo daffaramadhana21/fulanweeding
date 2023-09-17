@@ -95,7 +95,8 @@ body {
 .home h2,
 .info h2,
 .story h2,
-.gallery h2 {
+.gallery h2,
+.rsvp h2 {
   color: var(--pink);
   font-family: "Sacramento", cursive;
   font-size: 5rem;
@@ -183,12 +184,13 @@ body {
 }
 
 .story,
-.gallery {
+.gallery,
+.rsvp {
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
-.story p,
+.story span,
 .gallery span {
   text-transform: uppercase;
   color: #666;
@@ -199,7 +201,8 @@ body {
 }
 
 .story p,
-.gallery p {
+.gallery p,
+.rsvp p {
   font-size: 1rem;
   font-weight: 300;
 }
@@ -316,8 +319,17 @@ body {
   background-color: #f5f5f5;
 }
 
+.rsvp {
+  background-color: var(--bg);
+}
 
+.rsvp h2 {
+  font-size: 4.5rem;
+}
 
+.rsvp p {
+  color: white;
+}
 
 /* Media Query */
 /* Extra Large */
